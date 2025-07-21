@@ -29,9 +29,20 @@ app.get('/', (req, res) => {
 
 //1. Query Parameter: query from client not made on server
 app.get('/watch',(req,res)=>{
-    let videoId = req.query.v
+    let videoId = req.query.n
     console.log(videoId) //req.query is an object; extract v from it
     res.send("Got the id!")
+})
+
+//2. Params : made :v ourself, after :v -> all put in the path variable v
+app.get('/watch/:v/video/:n',(req,res)=>{
+    
+    res.send("Got the id!")
+    console.log(req.params.v) //req.params is an object; extract v from it
+    console.log(req.params.n) //req.params is an object; extract v from it
+
+
+    //mutiple params: / lagate raho
 })
 
 
