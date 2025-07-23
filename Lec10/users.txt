@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Sehaj Kundra",
+    "age": "19"
+  },
+  {
+    "name": "Tanya Upadhyay",
+    "age": "20"
+  },
+  {
+    "name": "Tanya Upadhyay",
+    "age": "20"
+  }
+]

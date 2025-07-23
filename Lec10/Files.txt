@@ -5,3 +5,13 @@ In our case server sends the file
 
 it demands endpoint everytime - > which is hectic to make get request for all components, hence we put all static content in public folder
 we send entire public folder to browser
+
+HTML form attributes
+1. id -  Uniquely identifies an HTML element on the page
+2. name - Specifies the key name for form data when it's submitted
+3. value - Sets the default value of a form input
+4. action - where to send the form in backend
+
+JSON.parse -> takes in json formatted string as input and converts to corresponding JAVASCRIPT OBJECT OR VALUE!
+
+
