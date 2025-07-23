@@ -1,0 +1,7 @@
+In our case, right now even index.html file is in the server
+index.html, css and js files are all static/public files since no backend operation like adding in db etc
+Browser is the client, even to access html file, it needs to send request to server
+In our case server sends the file
+
+it demands endpoint everytime - > which is hectic to make get request for all components, hence we put all static content in public folder
+we send entire public folder to browser

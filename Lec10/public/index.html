@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple To-Do List</title>
+  <link rel = "stylesheet" href = "./style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      background: #f9f9f9;
+
+    }
+
+    li:hover {
+      background: #e0f7fa;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 1rem;
+      transform: scale(1.2);
+    }
+
+    label {
+      flex-grow: 1;
+    }
+
+    input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List</h1>
+    <ul>
+      <li>
+        <input type="checkbox" id="task1">
+        <label for="task1">Buy groceries</label>
+      </li>
+      <li>
+        <input type="checkbox" id="task2">
+        <label for="task2">Walk the dog</label>
+      </li>
+      <li>
+        <input type="checkbox" id="task3">
+        <label for="task3">Read a book</label>
+      </li>
+      <li>
+        <input type="checkbox" id="task4">
+        <label for="task4">Call mom</label>
+      </li>
+    </ul>
+    <a href ="./about.html">About us</a>
+  </div>
+</body>
+</html>
