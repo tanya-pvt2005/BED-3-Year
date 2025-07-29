@@ -21,9 +21,11 @@ DOM
     4. query selector
 
 6. Properties of DOM : to get or set a value in the DOM tree
-    innerText  both gets and sets
+    innerText  
     innerHTML
     textContent 
 
+7. innerText returns the visible text (excluding hidden elements), while textContent returns all text, including hidden content.
+8. getAttribute, setAttribute and classList
 
 

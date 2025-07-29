@@ -34,5 +34,33 @@ el4.innerText = "Changed using js"
 
 
 let data2 = ul.innerHTML;
+let data3 = ul.innerText;
+let data4 = ul.textContent;
 console.log(data2)
+console.log(data3)
+console.log(data4)
+
+//dynamically adding using js, here for multiple lines of string -> use a template literal
+ul.innerHTML = `<li class="item">Item4</li>
+        <li class="item">Item5</li>
+        <li class="item">Item6</li>`
+
+//getAttribute, setAttribute, classList
+console.log(el6[0])
+console.dir(el6) //in form of an object
+
+console.dir(el5.getAttribute("id")) //null
+console.log(el5.getAttribute("class"))
+
+el5.setAttribute("id","js")
+console.log(el5.getAttribute("id")) 
+
+//classList -> to deal with classes
+console.dir(el5)
+console.log(el5.classList)
+el5.classList.add = "delete"
+console.log(el5.classList.contains("item"))
+el5.classList.remove("c")
+console.log(el5.classList)
+
 
