@@ -1,0 +1,29 @@
+DOM
+
+1. Document Object Model is a document API in-> window object; creates a DOM tree of HTML/XML code we write
+2. Dom Tree : 
+            Document    
+                |
+              HTML
+           /         \
+        head          Body
+    1. meta         1. div
+    2. Link         2. ul ......etc
+    3. Script'
+
+3. Can modify, get and even create a new HTML webpage using javascript -> DOM Manipulation
+4. How to go from ul to link? Go from it's parent to sibling and so on : TRAVERSE FROM ONE ELEMENT TO OTHER
+
+5.accessing a node/ DOM element
+    1. using id
+    2. using class
+    3. using tag
+    4. query selector
+
+6. Properties of DOM : to get or set a value in the DOM tree
+    innerText  both gets and sets
+    innerHTML
+    textContent 
+
+
+
