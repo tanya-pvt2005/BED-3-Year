@@ -64,3 +64,9 @@ el5.classList.remove("c")
 console.log(el5.classList)
 
 
+//toggle button
+let signup = document.querySelector(".SignUp")
+let form = document.querySelector("#signup");
+signup.addEventListener("click",()=>{
+        form.classList.toggle("hide")
+})
