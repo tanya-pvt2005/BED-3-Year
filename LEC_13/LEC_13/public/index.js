@@ -8,6 +8,7 @@ function getUserData(URL){
         console.log(data)
         data.forEach( displayUser);
     })
+    
     .catch((err)=>{
         console.log(err);
     })
@@ -32,3 +33,4 @@ function displayUser(user){
 
 // getUserData("https://jsonplaceholder.typicode.com/users");
 getUserData("http://localhost:3000/users");
+

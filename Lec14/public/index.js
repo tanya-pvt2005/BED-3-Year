@@ -32,3 +32,35 @@ function displayUser(user){
 
 // getUserData("https://jsonplaceholder.typicode.com/users");
 getUserData("http://localhost:3000/users");
+
+let registerForm = document.querySelector(".register")
+let nameInput = document.querySelector(".name")
+let userNameInput = document.querySelector(".username")
+
+function addUser(name, username, URL){   //by default get request
+    let data = {
+        name:name,
+        username: username
+    }
+    fetch(URL,{
+        method:"POST",
+        body:JSON.stringify(data),
+        headers:{
+            "content-type" : "application/json"
+        }
+    }) 
+
+    .then((res)=>{
+        return res.json()
+    })
+    .then((data)=>{
+        console.log(data)
+    })
+}
+
+registerForm.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    let name = nameInput.value
+    let username = userNameInput.value
+    addUser(name, username, "http://localhost:3000/addUser")
+})
