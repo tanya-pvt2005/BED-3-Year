@@ -1,9 +1,9 @@
 const express = require("express")
-const urouter = express.urouter()
+const urouter = express.Router()
 
 
 //user
-urouter.post("/users",async(req,res)=>{
+urouter.post("/",async(req,res)=>{
   let {username,email,password}  = req.body;
    let newUser=new user({
     username,
@@ -17,14 +17,14 @@ urouter.post("/users",async(req,res)=>{
     message:"blog added successfully"
   })
 })
-urouter.get("/users",async(req,res)=>{
+urouter.get("/",async(req,res)=>{
    let allusers= await user.find();
    res.json({
         success:true,
         data:allusers
    }) 
 })
-urouter.get("/users/:id",async(req,res)=>{
+urouter.get("/:id",async(req,res)=>{
     let {id}= req.params
     let userExist= await user.findOne({_id:id}).populate("blogs")
     if(userExist){
@@ -37,4 +37,4 @@ urouter.get("/users/:id",async(req,res)=>{
 
 
 
-module.exports=uuurouter
+module.exports=urouter

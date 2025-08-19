@@ -3,13 +3,16 @@ const mongoose= require("mongoose")
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-const Blogs= require("./model/blog");
+const blogs= require("./model/blog");
 const user = require("./model/user");
 
 let blogRoute = require("./routes/blogRoutes")
 let userRoute = require("./routes/userRoutes")
 
 app.use("/api/blogs", blogRoute)
+app.use("/api/users", userRoute)
+
+
 
 app.listen(4455,()=>{
     console.log("server started")
