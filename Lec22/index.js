@@ -6,10 +6,55 @@ const jwt = require('jsonwebtoken');
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 console.log(User)
+
+function isLogin(req, res, next){
+    //token recieve from frontend
+
+    if(!req.headers.authorization){
+        return res.json({
+            success:false,
+            message:"Unauthorised access"
+        })
+    }
+
+    let token = req.headers.authorization
+    console.log(token)
+
+    if(!token){
+        return res.json({
+            success:false,
+            message:"please login"
+        })
+    }
+    let decode = jwt.verify(token, "okkkkk")
+    console.log(decode)
+
+    if(!decode){
+        return res.json({
+            success:false,
+            message:"Invalid token"
+        })
+    }
+
+    req.user = decode.user //modified req for the next middleware
+
+    next()
+}
 app.get("/health",(req,res)=>{
     res.json({
         status:"ok",
         message:"server running ok"
+    })
+})
+
+app.get("/home",isLogin,(req,res)=>{
+
+    console.log("fghjk")
+    let username = req.user.name;
+    console.log(username)
+    res.json({
+        success:true,
+        message:"welcome "+username
     })
 })
 //end-point for signup---adding new user into database
