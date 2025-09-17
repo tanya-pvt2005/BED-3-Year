@@ -42,3 +42,40 @@ getUserTweet("1")
 .then((data)=>console.log(data))
 
 //user whose id is 1 wants to update his tweet --> tweet id is 1
+async function updateTweet(tweetid, userId, updatedContent){
+
+    let tweet = await prisma.tweet.findUnique({
+        where:{
+            id: Number(tweetid)
+        }
+    })
+    if(!tweet){
+        return "tweet does not exist"
+    }
+    if(tweet.userId!=Number(userId)){
+        return "user cannot update this tweet"
+    }
+    await prisma.tweet.update({
+        where:{
+            id: Number(tweetid)
+        },
+        data:{
+            content:updatedContent
+        }
+    })
+}
+
+updateTweet("1","1","updated first tweet")
+.then(()=>{console.log("Tweet is updated")})
+
+async function deleteUser(userId){
+    
+    const deleteUser = await prisma.user.delete({
+        where:{
+            id:userId
+        }
+    })
+}
+deleteUser(1)
+.then(()=>{console.log("User deleted successfully")})
+.catch((err)=>{console.log(err)})
