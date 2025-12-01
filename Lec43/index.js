@@ -18,4 +18,18 @@ app.post("/sum", (req, res)=>{
     })
 })
 
+app.post("/api/users/register",async (req,res)=>{
+    let{name, email, password} = req.body
+    
+    let newUser = new User({
+        name, email, password
+    })
+
+    await newUser.save()
+    res.json({
+        success:true,
+        message: "user registered successfully",
+        data:newUser
+    })
+})
 module.exports = app
