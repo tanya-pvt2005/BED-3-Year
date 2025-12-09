@@ -1,0 +1,11 @@
+# decide a base image
+FROM node:latest
+WORKDIR /app
+COPY . .
+
+RUN npm install
+EXPOSE 3000
+CMD ["node", "index.js"]
+
+# size should be less of base image, dependency that we dont need in pkg.json -----
+# instruction
